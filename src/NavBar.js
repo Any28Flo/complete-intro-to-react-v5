@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {Link} from "@reach/router"
 import {css} from "@emotion/core"
-
+import colors from "./colors";
 const colorBlue = "aqua"
 
 const NavBar = () =>{
@@ -11,13 +11,20 @@ const NavBar = () =>{
     <header
       onClick={() => setPadding(padding+5)}
       css={ css`
-      background-color: ${colorBlue};
+      background-color: ${colors.default};
       padding: ${padding}em;
       `} >
       <Link to="/">
         Adopt me
       </Link>
-      <span role="img" aria-label="logo">🐶🐶🐶🐶🐾</span>
+      <span
+      css={css`
+        font-size: 60px;
+        &:hover{
+        text-decoration: underline
+        }
+      `}
+        role="img" aria-label="logo">🐶🐶🐶🐶🐾</span>
     </header>
   )
 }
